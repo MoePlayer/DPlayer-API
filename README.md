@@ -9,7 +9,7 @@ Clone 到 Server 上之后。。
 ## 已完成的。。
 * [x] 添加弹幕
 * [x] 获取 BiliBili 视频链接
-* [ ] 获取 BiliBili 弹幕。。
+* [x] 获取 BiliBili 弹幕。。
 
 ## Rewrite
 ##### Nginx（需要 Pathinfo 的支持
