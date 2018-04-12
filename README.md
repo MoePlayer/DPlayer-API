@@ -3,7 +3,9 @@
 
 ## 使用方法
 Clone 到 Server 上之后。。
+
 把 MYSQL.sql 导入到数据库。。然后修改一下 Config/Config.php 中的数据库信息
+
 最后。。添加一波 Rewrite 就完成啦。。 ヾ(=･ω･=)o
 
 ## 已完成的。。
