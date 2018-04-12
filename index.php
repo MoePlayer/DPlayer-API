@@ -1,8 +1,18 @@
 <?php
-    /** 定义 */
-    define ('APP_PATH', __DIR__);
-    define ('APP_URL', rtrim (dirname ($_SERVER['SCRIPT_NAME']), '/'));
+    // 检查是否已安装
+    if (!is_file ('../config.php')) {
+        header('HTTP/1.1 503 Service Unavailable');
+        exit ();
+    }
     
-    /** 初始化框架 */
-    require_once 'System/Init.php';
+    // 加载配置
+    require_once '../init.php';
+	
+	if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+	    exit('ok');   
+	}
+	
+    // 执行各类操作
+    session_start();
+    $danModel = new Dan;
 ?>

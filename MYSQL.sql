@@ -15,8 +15,8 @@ CREATE TABLE `aid2cid` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-DROP TABLE IF EXISTS `blanklist`;
-CREATE TABLE `blanklist` (
+DROP TABLE IF EXISTS `blacklist`;
+CREATE TABLE `blacklist` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `value` varchar(255) NOT NULL,
   `type` int(11) NOT NULL DEFAULT '0',
