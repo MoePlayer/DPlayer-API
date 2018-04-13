@@ -8,6 +8,10 @@
     // 加载配置
     require_once '../init.php';
 	
+	if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+        exit('OK');
+    }
+    
     // 执行各类操作
     $danModel = new Dan;
     
