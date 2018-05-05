@@ -1,5 +1,5 @@
 <?php
-    class Blacklist {
+    class BlacklistModel extends FLModel {
         public function add () {
             
         }
@@ -14,7 +14,7 @@
     		if ($limit != 0) {
     			$where['LIMIT'] = $limit;
     		}
-    		$ret = $count ? $GLOBALS['db']->count ('blacklist', $where) : $GLOBALS['db']->select ('blacklist', '*', $where);
+    		$ret = $count ? $this->db->count ('blacklist', $where) : $this->db->select ('blacklist', '*', $where);
     
     		/** 返回 */
     		return $ret;

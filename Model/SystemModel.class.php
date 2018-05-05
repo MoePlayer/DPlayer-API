@@ -1,6 +1,6 @@
 <?php
-	class System {
-		static public function fetch ($url, $postdata = NULL, $cookie = NULL, $header = array (), $convert = false)
+	class SystemModel extends FLModel {
+		public function fetch ($url, $postdata = NULL, $cookie = NULL, $header = array (), $convert = false)
 		{
 	        // 访问
 			$ch = curl_init ();
@@ -28,7 +28,7 @@
 			return $re;
 		}
 		
-		static public function GetVideoURL ($cid) {
+		public function GetVideoURL ($cid) {
             $header = [
                 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.75 Safari/537.36'    
             ];
@@ -40,7 +40,7 @@
             return str_replace ('http', 'https', $data['durl']['url']);
         }
         
-        static public function GetVideoDan ($cid) {
+        public function GetVideoDan ($cid) {
             $danmaku = [];
             
             $source = $this->fetch('https://comment.bilibili.com/'. $cid .'.xml');
@@ -67,11 +67,11 @@
             return $danmaku;
         }
 		
-		static public function GetIP () {
+		public function GetIP () {
 		    return ($_SERVER["HTTP_VIA"]) ? $_SERVER["HTTP_X_FORWARDED_FOR"] : $_SERVER["REMOTE_ADDR"];
 		}
 		
-		static public function xmlToArray($xml){ 
+		public function xmlToArray($xml){ 
             libxml_disable_entity_loader(true); 
             $xmlstring = simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA); 
             $val = json_decode(json_encode($xmlstring),true); 
